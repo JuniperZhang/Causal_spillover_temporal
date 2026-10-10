@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "When Treatments Spill Over: A Neural Framework for Spatiotemporal Causal Effect Estimation"
+authors:
+  - family-names: Zhang
+    given-names: Shaohui
+  - family-names: Shi
+    given-names: Jiasheng
+  - family-names: Huang
+    given-names: Jing
+license: MIT
+repository-code: "https://github.com/JuniperZhang/Causal_spillover_temporal"
+preferred-citation:
+  type: article
+  title: "When Treatments Spill Over: A Neural Framework for Spatiotemporal Causal Effect Estimation"
+  authors:
+    - family-names: Zhang
+      given-names: Shaohui
+    - family-names: Shi
+      given-names: Jiasheng
+    - family-names: Huang
+      given-names: Jing
+  year: 2026
+  journal: "arXiv preprint"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.16086"
+  url: "https://arxiv.org/abs/2610.16086"
