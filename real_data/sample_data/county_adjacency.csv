@@ -1,0 +1,8 @@
+County Name,Neighbor Name,Length,county_geoid,neighbor_geoid,w_len
+"Polk County, IA","Boone County, IA",9774.0,19153,19015.0,0.0568516935103914
+"Polk County, IA","Dallas County, IA",41022.0,19153,19049.0,0.2386095939414033
+"Polk County, IA","Jasper County, IA",41143.0,19153,19099.0,0.2393134055758168
+"Polk County, IA","Madison County, IA",0.0,19153,19121.0,0.0
+"Polk County, IA","Marion County, IA",1892.0,19153,19125.0,0.0110050546471926
+"Polk County, IA","Story County, IA",29072.0,19153,19169.0,0.1691009242617248
+"Polk County, IA","Warren County, IA",49018.0,19153,19181.0,0.285119328063471

@@ -4,7 +4,8 @@ Code for the paper *When Treatments Spill Over*: an LSTM history encoder with
 joint own-treatment and spillover assignment models, feeding a
 self-normalized Gaussian-kernel IPW estimator of path-indexed mean potential
 outcomes and their direct (DE), spillover (SE) and total (TE) effects, with a
-sensitivity analysis for unmeasured confounding, and the simulation study.
+sensitivity analysis for unmeasured confounding, the simulation study, and the
+county-level COVID-19 policy application.
 
 ## Installation
 
@@ -42,7 +43,8 @@ model/
 ├── data/
 │   ├── generation.py               DGP equations: network, covariates, treatment, latent state, outcome
 │   ├── dataset.py                  NetworkTemporalCausalDataset: one simulated network and its histories
-│   └── ground_truth.py             two-hop local structural Monte Carlo ground truth
+│   ├── ground_truth.py             two-hop local structural Monte Carlo ground truth
+│   └── real_data_dataset.py        RealDataDataset: the county panel for the application
 ├── models/
 │   ├── encoder.py                  GraphSAGE mean aggregator and LSTM backbone
 │   ├── treatment_model.py          g_Z, own-treatment model f_X, spillover model f_D
@@ -73,12 +75,23 @@ model/
     ├── simulation_descriptives.py  descriptive figures of the simulated data
     ├── sensitivity_figures.py      sensitivity-bound figures for one study
     └── sensitivity_comparison.py   sensitivity-bound figures across sample sizes
+
+real_data/                          county-level COVID-19 application (Section 6); see real_data/README.md
+├── sample_data/                    a few rows of the county-week panel and county adjacency (data format)
+├── build_inputs.py                 panel and adjacency → model input tensors
+├── train.py                        train the model for one policy domain and seed
+├── estimate.py                     path effects with network-block bootstrap intervals
+├── run_seed.sh                     train and estimate everything for one seed
+├── compact_seed.py                 keep one seed's effects and bootstrap draws
+├── pool_seeds.py                   pool the seeds
+└── plot_policy_effects.py          Figure 3
 ```
 
 Imports run one way: `data` and `models` import nothing else from the
 package; `training` imports `data` and `models`; `estimation` imports `data`
 and `training`; `pipeline` imports `estimation`, `training`, `data` and
-`config.py`; `visualization` imports `pipeline` and `config.py`.
+`config.py`; `visualization` imports `pipeline` and `config.py`. The
+`real_data` scripts import `model`.
 
 ## Code map
 
@@ -95,6 +108,7 @@ and `training`; `pipeline` imports `estimation`, `training`, `data` and
 | Sensitivity analysis (Section 4) | `model/estimation/sensitivity.py` |
 | Simulation and sensitivity runners | `model/pipeline/` |
 | Figures | `model/visualization/` |
+| County-level COVID-19 application (Section 6) | `real_data/`, `model/data/real_data_dataset.py` |
 
 ## Simulation study
 
@@ -188,6 +202,14 @@ python -m model.visualization.sensitivity_comparison --studies results/sensitivi
 ```
 
 Every runner and figure module accepts `--help`.
+
+## Real-data application
+
+`real_data/` contains the code for the county-level COVID-19 policy analysis
+(Section 6) and a few rows of the data that show its format. The
+full data are available from the corresponding author on reasonable request.
+Data format, pipeline, the paper's settings and commands are in
+[`real_data/README.md`](real_data/README.md).
 
 ## License
 

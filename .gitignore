@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 results/
 .DS_Store
+real_data/inputs/
+real_data/runs/
+real_data/pooled/
+real_data/policy_effects.png
