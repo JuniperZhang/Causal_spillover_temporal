@@ -1,0 +1,10 @@
+County Name,Neighbor Name,Length,county_geoid,neighbor_geoid,w_len
+"Apache County, AZ","Montezuma County, CO",0.0,4001,8083.0,0.0
+"Apache County, AZ","San Juan County, NM",110567.0,4001,35045.0,0.1115733919958021
+"Apache County, AZ","San Juan County, UT",85065.0,4001,49037.0,0.0858392702173606
+"Montezuma County, CO","San Juan County, NM",59266.0,8083,35045.0,0.186471928212744
+"Montezuma County, CO","San Juan County, UT",53924.0,8083,49037.0,0.1696640950451187
+"Cook County, IL","Lake County, IN",57382.0,17031,18089.0,0.162497238945872
+"Wyandotte County, KS","Jackson County, MO",7717.0,20209,29095.0,0.0764793910983816
+"Hudson County, NJ","New York County, NY",15059.0,34017,36061.0,0.2013342959516551
+"San Juan County, NM","San Juan County, UT",0.0,35045,49037.0,0.0
